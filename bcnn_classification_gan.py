@@ -351,8 +351,9 @@ if __name__ ==  '__main__':
 
         feat_list = np.array(test_out)
         label_list = np.array(test_l)
-        feat_list = torch.round(torch.sigmoid(torch.from_numpy(feat_list))).numpy()
         feat_score = torch.sigmoid(torch.from_numpy(feat_list)).numpy()
+        feat_list = torch.round(torch.sigmoid(torch.from_numpy(feat_list))).numpy()
+        
         print(feat_list)
 
         accuracy.append(accuracy_score(feat_list, label_list))

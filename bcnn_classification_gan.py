@@ -338,7 +338,7 @@ if __name__ ==  '__main__':
         r_li = train_loop(num, model, loss_fc, optimizer, train_loader, val_loader, device)
 
         model.eval()
-        # model.load_state_dict(torch.load(save + 'model_BCNN_dCor_age_NKI.pt'))
+        model.load_state_dict(torch.load(save + 'model_BCNN_dCor_age_NKI.pt'))
         for fc, label in test_loader:
             with torch.no_grad():
                 fc = fc.to(device).float()
